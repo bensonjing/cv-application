@@ -1,9 +1,67 @@
 import React from 'react' 
+import Header from './components/Header'
+import CVForm from './components/CVForm'
+import Preview from './components/Preview'
+import initCVFrom from './modules/initCVForm'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props) 
+    this.state = initCVFrom
+  }
+
+  experienceAdd = (e) => {
+    e.preventDefault()
+    this.setState(prevState => ({
+      ...prevState, 
+      experience: [
+        ...prevState.experience, 
+        {
+          position: '', 
+          company: '', 
+          city: '', 
+          from: '', 
+          to: '', 
+        },
+      ],
+    }))
+  }
+
+  educationAdd = (e) => {
+    e.preventDefault()
+    this.setState(prevState => ({
+      ...prevState, 
+      education: [
+        ...prevState.education, 
+        {
+          name: '', 
+          city: '', 
+          degree: '', 
+          subject: '',
+          from: '', 
+          to: '', 
+        },
+      ],
+    }))
+  }
+
+  reset = (e) => {
+    e.preventDefault() 
+    this.setState(initCVFrom)
+  }
+
   render() {
     return (
-      null
+      <>
+        <Header />
+        <CVForm 
+          cvForm={this.state} 
+          experienceAdd={this.experienceAdd}
+          educationAdd={this.educationAdd}
+          reset={this.reset}
+        />
+        <Preview />
+      </>
     )
   }
 }
