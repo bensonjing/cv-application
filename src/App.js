@@ -1,4 +1,5 @@
 import React from 'react' 
+import uniqid from 'uniqid'
 import Header from './components/Header'
 import CVForm from './components/CVForm'
 import Preview from './components/Preview'
@@ -20,6 +21,27 @@ class App extends React.Component {
     }))
   }
 
+  handleChangeExperience = (id, e) => {
+    this.setState(prevState => {
+      const newExperience = prevState.experience.map((item) => {
+        if (item.id === id) {
+          return {...item, [e.target.name]: e.target.value}
+        }
+        return item
+      })
+      return {...prevState, experience: [...newExperience]}
+    })
+  }
+
+  experienceDelete = (id, e) => {
+    this.setState(prevState => {
+      const newExperience = prevState.experience.filter((item) => {
+        return item.id !== id
+      })
+      return { ...prevState, experience: [...newExperience] }
+    })
+  }
+
   experienceAdd = (e) => {
     e.preventDefault()
     this.setState(prevState => ({
@@ -27,6 +49,7 @@ class App extends React.Component {
       experience: [
         ...prevState.experience, 
         {
+          id: uniqid(),
           position: '', 
           company: '', 
           city: '', 
@@ -44,6 +67,7 @@ class App extends React.Component {
       education: [
         ...prevState.education, 
         {
+          id: uniqid(), 
           name: '', 
           city: '', 
           degree: '', 
@@ -67,6 +91,8 @@ class App extends React.Component {
         <CVForm 
           cvForm={this.state} 
           handleChangePersonal={this.handleChangePersonal}
+          handleChangeExperience={this.handleChangeExperience}
+          experienceDelete={this.experienceDelete}
           experienceAdd={this.experienceAdd}
           educationAdd={this.educationAdd}
           reset={this.reset}

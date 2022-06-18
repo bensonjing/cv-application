@@ -1,3 +1,5 @@
+import uniqid from 'uniqid'
+
 export default {
   personalInfo: {
     firstName: '', 
@@ -10,6 +12,7 @@ export default {
   }, 
   experience: [
     {
+      id: uniqid(), 
       position: '', 
       company: '', 
       city: '', 
@@ -19,6 +22,7 @@ export default {
   ], 
   education: [
     {
+      id: uniqid(), 
       name: '', 
       city: '', 
       degree: '', 

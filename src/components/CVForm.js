@@ -11,10 +11,13 @@ class CVForm extends React.Component {
           personalInfo={this.props.cvForm.personalInfo}
           handleChange={this.props.handleChangePersonal}
         />
-        <Experience /> 
-        <button onClick={this.props.experienceAdd}>Add</button>
-        <Education />
-        <button onClick={this.props.educationAdd}>Add</button>
+        <Experience 
+          experience={this.props.cvForm.experience}
+          handleChange={this.props.handleChangeExperience}
+          handleDelete={this.props.experienceDelete}
+          handleClick={this.props.experienceAdd}
+        /> 
+        <Education handleClick={this.props.educationAdd}/>
         <button onClick={this.props.reset}>Reset</button>
       </form>
     )
