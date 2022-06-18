@@ -60,6 +60,27 @@ class App extends React.Component {
     }))
   }
 
+  handleChangeEducation = (id, e) => {
+    this.setState(prevState => {
+      const newEducation = prevState.education.map((item) => {
+        if (item.id === id) {
+          return { ...item, [e.target.name]: e.target.value }
+        }
+        return item
+      })
+      return { ...prevState, education:[ ...newEducation ]}
+    })
+  }
+
+  educationDelete = (id, e) => {
+    this.setState(prevState => {
+      const newEducation = prevState.education.filter((item) => {
+        return item.id !== id
+      })
+      return { ...prevState, education:[ ...newEducation ]}
+    })
+  }
+
   educationAdd = (e) => {
     e.preventDefault()
     this.setState(prevState => ({
@@ -94,6 +115,8 @@ class App extends React.Component {
           handleChangeExperience={this.handleChangeExperience}
           experienceDelete={this.experienceDelete}
           experienceAdd={this.experienceAdd}
+          handleChangeEducation={this.handleChangeEducation}
+          educationDelete={this.educationDelete}
           educationAdd={this.educationAdd}
           reset={this.reset}
         />
