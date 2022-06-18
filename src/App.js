@@ -10,6 +10,16 @@ class App extends React.Component {
     this.state = initCVFrom
   }
 
+  handleChangePersonal = (e) => {
+    this.setState(prevState => ({
+      ...prevState, 
+      personalInfo: {
+        ...prevState.personalInfo, 
+        [e.target.name]: e.target.value,
+      },
+    }))
+  }
+
   experienceAdd = (e) => {
     e.preventDefault()
     this.setState(prevState => ({
@@ -56,6 +66,7 @@ class App extends React.Component {
         <Header />
         <CVForm 
           cvForm={this.state} 
+          handleChangePersonal={this.handleChangePersonal}
           experienceAdd={this.experienceAdd}
           educationAdd={this.educationAdd}
           reset={this.reset}

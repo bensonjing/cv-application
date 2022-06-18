@@ -7,7 +7,10 @@ class CVForm extends React.Component {
   render() {
     return (
       <form>
-        <PersonalInfo />
+        <PersonalInfo 
+          personalInfo={this.props.cvForm.personalInfo}
+          handleChange={this.props.handleChangePersonal}
+        />
         <Experience /> 
         <button onClick={this.props.experienceAdd}>Add</button>
         <Education />
