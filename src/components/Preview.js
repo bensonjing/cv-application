@@ -14,8 +14,16 @@ class Preview extends React.Component {
           lastName={cvForm.personalInfo.lastName} 
           title={cvForm.personalInfo.title}
         />
-        <Content /> 
-        <Sidebar />
+        <Content 
+          description={cvForm.personalInfo.description}
+          experience={cvForm.experience} 
+          education={cvForm.education}
+        /> 
+        <Sidebar 
+          address={cvForm.personalInfo.address} 
+          phoneNumber={cvForm.personalInfo.phoneNumber} 
+          email={cvForm.personalInfo.email}
+        />
       </div>
     )
   }
