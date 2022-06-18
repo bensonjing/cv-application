@@ -120,7 +120,9 @@ class App extends React.Component {
           educationAdd={this.educationAdd}
           reset={this.reset}
         />
-        <Preview />
+        <Preview 
+          cvForm={this.state}
+        />
       </>
     )
   }
