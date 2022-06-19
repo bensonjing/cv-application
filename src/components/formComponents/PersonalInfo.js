@@ -5,8 +5,8 @@ class PersonalInfo extends React.Component {
     const { personalInfo, handleChange } = this.props
 
     return (
-      <fieldset>
-        <legend>Personal Information</legend>
+      <div className="subForm">
+        <div className="formTitle">Personal Information</div>
         <input 
           type="text" 
           onChange={handleChange} 
@@ -57,7 +57,7 @@ class PersonalInfo extends React.Component {
           value={personalInfo.description}
           rol="4" col="30"
         />
-      </fieldset>
+      </div>
     )
   }
 }

@@ -14,11 +14,11 @@ class Experience extends React.Component {
     ))
 
     return (
-      <fieldset>
-        <legend>Experience</legend>
+      <div className="subForm">
+        <div className="formTitle">Experience</div>
         {experienceItems}
         <button onClick={this.props.handleClick}>Add</button>
-      </fieldset>
+      </div>
     )
   }
 }

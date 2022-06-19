@@ -14,11 +14,11 @@ class Education extends React.Component {
     ))
 
     return (
-      <fieldset>
-        <legend>Education</legend>
+      <div className="subForm">
+        <div className="formTitle">Education</div>
         {educationItems}
         <button onClick={this.props.handleClick}>Add</button>
-      </fieldset>
+      </div>
     )
   }
 }

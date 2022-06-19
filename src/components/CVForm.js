@@ -23,7 +23,9 @@ class CVForm extends React.Component {
           handleDelete={this.props.educationDelete}
           handleClick={this.props.educationAdd}
         />
-        <button onClick={this.props.reset}>Reset</button>
+        <div id="reset">
+          <button onClick={this.props.reset}>Reset</button>
+        </div>
       </form>
     )
   }
