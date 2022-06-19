@@ -5,7 +5,8 @@ body {
 
 /* Header */
 .header {
-  background-color: lightgray;
+  background-color: rgb(51, 51, 51);
+  color: white;
   height: 10vh;
   font-size: 2.8rem;
   display: flex; 
@@ -16,10 +17,12 @@ body {
 /* Form */ 
 form {
   background-color: lightgray;
-  width: 60vw;
+  width: 80vw;
+  max-width: 800px;
   margin: 40px auto;
   border: 1px solid lightgray; 
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 .subForm{
@@ -53,3 +56,59 @@ button {
 #reset {
   padding: 0 20px 20px 20px;
 }
+
+/* Preview */ 
+.preview {
+  width: 80vw; 
+  max-width: 800px;
+  aspect-ratio: 1 / 1.414;
+  margin: 40px auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.preview-header {
+  background-color: rgb(20, 62, 114);
+  height: 10%;
+  padding: 20px;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.subtitle {
+  font-size: 2rem; 
+}
+
+.preview-main {
+  display: flex;
+}
+
+.preview-content {
+  width: 70%;
+}
+
+.preview-section, .preview-sidebar{
+  margin: 20px;
+}
+
+.section-title {
+  color: rgb(20, 62, 114);
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid grey;
+}
+
+.description, .sidebar-section {
+  margin: 10px 0;
+}
+
+.experience, .education {
+  display: flex;
+  margin: 10px 0;
+}
+
+.experience-left, .education-left {
+  width: 40%;
+}
+

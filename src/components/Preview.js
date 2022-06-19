@@ -8,22 +8,24 @@ class Preview extends React.Component {
     const cvForm = this.props.cvForm
 
     return (
-      <div>
+      <div className="preview">
         <Header 
           firstName={cvForm.personalInfo.firstName}
           lastName={cvForm.personalInfo.lastName} 
           title={cvForm.personalInfo.title}
         />
-        <Content 
-          description={cvForm.personalInfo.description}
-          experience={cvForm.experience} 
-          education={cvForm.education}
-        /> 
-        <Sidebar 
-          address={cvForm.personalInfo.address} 
-          phoneNumber={cvForm.personalInfo.phoneNumber} 
-          email={cvForm.personalInfo.email}
-        />
+        <div className="preview-main">
+          <Content 
+            description={cvForm.personalInfo.description}
+            experience={cvForm.experience} 
+            education={cvForm.education}
+          /> 
+          <Sidebar 
+            address={cvForm.personalInfo.address} 
+            phoneNumber={cvForm.personalInfo.phoneNumber} 
+            email={cvForm.personalInfo.email}
+          />
+        </div>
       </div>
     )
   }

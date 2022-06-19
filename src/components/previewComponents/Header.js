@@ -3,10 +3,10 @@ import React from 'react'
 class Header extends React.Component {
   render() {
     return (
-      <>
-        <div>{this.props.firstName} {this.props.lastName}</div>
-        <div>{this.props.title}</div>
-      </>
+      <div className="preview-header">
+        <div className="title">{this.props.firstName} {this.props.lastName}</div>
+        <div className="subtitle">{this.props.title}</div>
+      </div>
     )
   }
 }
