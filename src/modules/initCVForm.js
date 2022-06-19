@@ -1,6 +1,6 @@
 import uniqid from 'uniqid'
 
-export default {
+const initCVForm = {
   personalInfo: {
     firstName: '', 
     lastName: '', 
@@ -32,3 +32,5 @@ export default {
     }, 
   ], 
 }
+
+export default initCVForm
